@@ -29,10 +29,13 @@ const addNoteHandler = (request, h) => {
   }
 
   const response = h.response({
-    status: 'fail',
-    message: 'Catatan gagal ditambahkan',
+    status: 'success',
+    message: 'Catatan berhasil ditambahkan',
+    data: {
+      noteId: id,
+    },
   });
-  response.code(500);
+  response.code(201);
   return response;
 };
 
